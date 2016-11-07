@@ -1,7 +1,3 @@
-function Note() {
-
+function Note(string) {
+  this.text = string;
 }
-
-Note.prototype.text = function (string) {
-  return string;
-};
