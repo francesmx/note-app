@@ -1,8 +1,15 @@
-function testNoteTakesText(string) {
+var Note = require("./src/note-model");
+
+function testNoteInstantiatesWithText(string) {
   var note = new Note(string);
   assert.isTrue(note.text === string);
 }
 
-testNoteTakesText('I really dislike JavaScript!');
+testNoteInstantiatesWithText('I really dislike JavaScript!');
 
-// look at exports thing so we can access the test variables from node??
+function testNoteReadTextMethod(string) {
+  var note = new Note(string);
+  assert.isTrue(note.getText() === string);
+}
+
+testNoteReadTextMethod("I really don't know what I'm doing");
