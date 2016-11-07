@@ -6,7 +6,8 @@
 
     Note.prototype.getText = function () {
       return this.text;
-    }
+    };
 
-    module.exports = Note;
+    exports.Note = Note;
+    exports.getText = this.getText;
 })(this);

@@ -1,4 +1,4 @@
-var Note = require("./src/note-model");
+// var Note = require("./src/note-model");
 
 function testNoteInstantiatesWithText(string) {
   var note = new Note(string);
