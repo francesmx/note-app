@@ -9,5 +9,5 @@
     };
 
     exports.Note = Note;
-    exports.getText = this.getText;
+    // exports.getText = this.getText;
 })(this);
