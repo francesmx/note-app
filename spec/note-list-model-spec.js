@@ -13,7 +13,15 @@ function testGetAllNotes() {
   var note2 = new Note("morning Frances");
   noteList.addNote(note);
   noteList.addNote(note2);
-  assert.isTrue(noteList.getAllNotes() === note && note2);
+  assert.isTrue(typeof noteList.getAllNotes().isArray );
 }
 
 testGetAllNotes();
+
+function createAndStoreNote(){
+  var noteList = new NoteList();
+  noteList.createNote("Javascript is better than Ruby.");
+  !emptyArray.isItEmpty(noteList.notes);
+}
+
+createAndStoreNote();
