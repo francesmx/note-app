@@ -37,9 +37,10 @@ function testNoteListViewReturnsMultiple() {
   var noteListView = new NoteListView();
   noteList.addNote("Hello World");
   noteList.addNote("Goodbye World");
-
   var actual = noteListView.renderAll(noteList);
+  console.log(actual)
   var expected = "<ul><li><div>Hello World</div></li><li><div>Goodbye World</div></li></ul>";
+
   assert.isTrue(actual === expected);
 }
 
