@@ -10,7 +10,7 @@ testNoteListView();
 function testNoteListViewWithNoNotes() {
   var noteList = new NoteList();
   var noteListView = new NoteListView(noteList);
-  assert.isTrue(noteListView.getHTML() === "<ul></ul>");
+  assert.isTrue(noteListView.getHTML() === "");
 }
 testNoteListViewWithNoNotes()
 
