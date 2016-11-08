@@ -17,12 +17,11 @@
     var liList = noteListAll.map(function(eachnote){
         return ("<li><div>" + eachnote.returnText() + "</div></li>");
       });
-      console.log("addListItemTags called! : " + liList);
-    return liList;
+    return liList.join("");
   }
 
-  NoteListView.prototype.addSurroundingListTags = function(){
-    console.log("addSurroundingListTags called! : ");
+  NoteListView.prototype.addSurroundingListTags = function(liListItems){
+      return ("<ul>" + liListItems + "</ul>")
   }
 
   exports.NoteListView = NoteListView;
