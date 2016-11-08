@@ -1,23 +1,30 @@
-var Note = require("./src/note-model").Note
-var NoteList = require("./src/note-list-model").NoteList
-var TestNoteView = require("./src/note-list-view.js").TestNoteView
+// var Note = require("./src/note-model").Note
+// var NoteList = require("./src/note-list-model").NoteList
+// var NoteListView = require("./src/note-list-view.js").NoteListView
 
-function testNoteView(){
-  var t-NoteView = new TestNoteView();
-  var note = new Note("Hello, here I am!!!");
+function NoItemsTestNoteView(){
+  var testNoteListView = new NoteListView();
   var testNoteList = new NoteList();
-  testNoteList.addNote(note);
-  //Do we need to do something to get it into "t-NoteView"???
-  if(t-NoteView.returnHtml() != "<ul><li><div>Hello, here I am!!!</div></li></ul>"){
-    throw new Error ("HTML list item was not created");
+  var actualValue = testNoteListView.returnHtml(testNoteList);
+  if(actualValue != "There is nothing in the list"){
+    throw new Error("An error should be returned")
   } else {
-    console.log("Success : " + testNoteList.returnNotes())
+    console.log("Success: Correct message was returned " + actualValue );
   }
 }
 
+function testNoteView(){
+  var note = new Note("Hello, here I am!!!");
+  var testNoteList = new NoteList();
+  testNoteList.addNote(note);
+  var testNoteListView = new NoteListView();
+  var actualValue = testNoteListView.returnHtml(testNoteList);
+  if(actualValue != "<ul><li><div>Hello, here I am!!!</div></li></ul>"){
+    throw new Error ("HTML list item was not correctly created : " + actualValue );
+  } else {
+    console.log("Success : " + actualValue );
+  }
+}
+
+NoItemsTestNoteView();
 testNoteView();
-
-
-// "<ul><li><div>Favourite food: pesto</div></li></ul>"
-
-// "<ul><li><div>Favourite food: pesto</div></li><li><div>Favourite drink: seltzer</div></li></ul>"
