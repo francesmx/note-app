@@ -20,8 +20,10 @@ testGetAllNotes();
 
 function createAndStoreNote(){
   var noteList = new NoteList();
-  noteList.createNote("Javascript is better than Ruby.");
+  var text = "Javascript is better than Ruby."
+  noteList.createNote(text);
   !emptyArray.isItEmpty(noteList.notes);
+  assert.isTrue(noteList.getNoteText(0) === text);
 }
 
 createAndStoreNote();

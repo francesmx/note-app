@@ -16,6 +16,11 @@
     return this.notes;
   };
 
+  NoteList.prototype.createNote = function (string) {
+    note = new Note(string);
+    this.addNote(note);
+  };
+
   exports.NoteList = NoteList;
   exports.addNote = this.addNote;
 })(this);
