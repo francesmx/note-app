@@ -1,6 +1,6 @@
 var Note = require("./src/note-model").Note
 var NoteList = require("./src/note-list-model").NoteList
-var TestNoteView = require("./src/note-list-vew.js").TestNoteView
+var TestNoteView = require("./src/note-list-view.js").TestNoteView
 
 function testNoteView(){
   var t-NoteView = new TestNoteView();
