@@ -22,16 +22,27 @@ function testNoteListViewReturnsEmpty () {
     // }
 }
 
-function testNoteListViewReturnsHTML() {
+function testNoteListViewReturnsOne() {
   var noteList = new NoteList();
   var noteListView = new NoteListView();
   noteList.addNote("Hello World");
 
   var actual = noteListView.renderAll(noteList);
   var expected = "<ul><li><div>Hello World</div></li></ul>";
-  console.log(actual)
+  assert.isTrue(actual === expected);
+}
+
+function testNoteListViewReturnsMultiple() {
+  var noteList = new NoteList();
+  var noteListView = new NoteListView();
+  noteList.addNote("Hello World");
+  noteList.addNote("Goodbye World");
+
+  var actual = noteListView.renderAll(noteList);
+  var expected = "<ul><li><div>Hello World</div></li><li><div>Goodbye World</div></li></ul>";
   assert.isTrue(actual === expected);
 }
 
 testNoteListViewReturnsEmpty();
-testNoteListViewReturnsHTML();
+testNoteListViewReturnsOne();
+testNoteListViewReturnsMultiple();
