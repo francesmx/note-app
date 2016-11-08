@@ -14,7 +14,7 @@ var emptyArray = {
     if ( !assertionToCheck.length === 0 ) {
       throw new Error("Assertion failed: " + assertionToCheck + " is not truthy");
     } else {
-      console.log("Passing")
+      console.log("Test passed. Well done.")
     }
   }
 };
