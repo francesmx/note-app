@@ -1,3 +1,5 @@
+var NoteList = require("./src/note-list-model").NoteList
+
 function testNoteListModel(){
   var testNoteList = new NoteList();
   testNoteList.addNote("My favourite language is JavaScript");

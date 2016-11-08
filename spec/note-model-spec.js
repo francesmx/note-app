@@ -1,3 +1,5 @@
+var Note = require("./src/note-model").Note
+
 function testNoteModel(){
   var testNote= new Note("My favourite language is JavaScript");
   if (testNote.returnText() != "My favourite language is JavaScript") {
