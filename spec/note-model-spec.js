@@ -1,4 +1,4 @@
-var Note = require("./src/note-model").Note
+// var Note = require("./src/note-model").Note
 
 function testNoteModel(){
   var testNote= new Note("My favourite language is JavaScript");

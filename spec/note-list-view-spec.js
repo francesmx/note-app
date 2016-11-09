@@ -27,14 +27,14 @@ function testNoteView(){
 }
 
 function testTwoNoteView(){
-  var note = new Note("Hello, here I am!!!");
-  var note2 = new Note("And here I'll stay!!!");
+  var note = new Note("Hello, here I am waiting patiently!!!");
+  var note2 = new Note("And here I'll stay for as long as it takes!!!");
   var testNoteList = new NoteList();
   testNoteList.addNote(note);
   testNoteList.addNote(note2);
   var testNoteListView = new NoteListView();
   var actualValue = testNoteListView.returnHtml(testNoteList);
-  if(actualValue != "<ul><li><div>Hello, here I am!!!</div></li><li><div>And here I'll stay!!!</div></li></ul>"){
+  if(actualValue != "<ul><li><div>Hello, here I am wai...</div></li><li><div>And here I'll stay f...</div></li></ul>"){
     throw new Error ("HTML list item was not correctly created : " + actualValue );
   } else {
     console.log("Success - The HTML was correctly generated : " + actualValue );

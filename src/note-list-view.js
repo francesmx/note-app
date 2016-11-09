@@ -10,12 +10,15 @@
       var ulList = this.addSurroundingListTags(liListItems);
       return ulList;
     }
-
   }
 
   NoteListView.prototype.addListItemTags = function(noteListAll){
     var liList = noteListAll.map(function(eachnote){
-        return ("<li><div>" + eachnote.returnText() + "</div></li>");
+      var shortText = eachnote.returnText();
+        if (shortText.length > 20){
+          shortText = shortText.substring(0,20) + "...";
+        }
+        return ("<li><div>" + shortText + "</div></li>");
       });
     return liList.join("");
   }

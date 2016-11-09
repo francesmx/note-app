@@ -1,5 +1,5 @@
-var NoteList = require("./src/note-list-model").NoteList
-var Note = require("./src/note-model").Note
+// var NoteList = require("./src/note-list-model").NoteList
+// var Note = require("./src/note-model").Note
 
 function testNoteListModel(){
   var testNoteList = new NoteList();
