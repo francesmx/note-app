@@ -1,4 +1,6 @@
-// var Note = require("./src/note-controller").NoteController
+var Note = require("./src/note-controller").NoteController
+var NoteList = require("./src/note-list-model").NoteList
+var Note = require("./src/note-model").Note
 
 function testNoteController(){
   var noteController = new NoteController();

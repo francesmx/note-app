@@ -1,6 +1,6 @@
-var Note = require("./src/note-model").Note
-var NoteList = require("./src/note-list-model").NoteList
-var NoteListView = require("./src/note-list-view.js").NoteListView
+// var Note = require("./src/note-model").Note
+// var NoteList = require("./src/note-list-model").NoteList
+// var NoteListView = require("./src/note-list-view.js").NoteListView
 
 function NoItemsTestNoteView(){
   var testNoteListView = new NoteListView();
@@ -40,6 +40,21 @@ function testTwoNoteView(){
     console.log("Success - The HTML was correctly generated : " + actualValue );
   }
 }
+
+function testNoteListView20chars(){
+  var note = new Note("This is a long string with more than 20 characters");
+  var testNoteList = new NoteList();
+  testNoteList.addNote(note)
+  var testNoteListView = new NoteListView();
+  var actualValue = testNoteListView.returnHtml(testNoteList);
+  if(actualValue != "<ul><li><div>This is a long strin...</div></li></ul>"){
+    throw new Error ("Sad days :( The string was not shortened : " + actualValue );
+  } else {
+    console.log("Happy days - the string was shortened : " + actualValue );
+  }
+}
+
 NoItemsTestNoteView();
 testNoteView();
 testTwoNoteView();
+testNoteListView20chars();

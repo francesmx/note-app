@@ -14,3 +14,7 @@ noteListView = new NoteListView();
 noteListView.returnHtml(noteController.noteList);
 console.log(noteController.noteList);
 noteController.insertHtml();
+
+note1 = new Note("Happy days is the new JS standard")
+singleNote = new SingleNoteView(note1)
+singleNote.viewSingleNote();
