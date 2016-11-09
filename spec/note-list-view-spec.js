@@ -33,6 +33,18 @@ function testNoteListViewReturnsMultiple() {
   assert.isTrue(actual === expected);
 }
 
+function testOnlyReturnsFirst20Chars() {
+  var noteList = new NoteList();
+  var noteListView = new NoteListView();
+  noteList.addNote("Hello oh my I could go on for ages and ages I just keep on typing!");
+
+  var actual = noteListView.renderAll(noteList);
+  var expected = "Hello oh my I could ..."
+
+  assert.isTrue(actual === expected);
+}
+
 testNoteListViewReturnsEmpty();
 testNoteListViewReturnsOne();
 testNoteListViewReturnsMultiple();
+testOnlyReturnsFirst20Chars();
