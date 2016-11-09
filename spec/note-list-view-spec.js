@@ -4,7 +4,7 @@ var assert = {
       throw new Error("Assertion failed: " + assertionToCheck + " is not truthy");
     }
     else {
-      console.log("Passed: " + assertionToCheck)
+      console.log("Passed: " + assertionToCheck);
     }
   }
 };
@@ -38,7 +38,7 @@ function testNoteListViewReturnsMultiple() {
   noteList.addNote("Hello World");
   noteList.addNote("Goodbye World");
   var actual = noteListView.renderAll(noteList);
-  console.log(actual)
+  console.log(actual);
   var expected = "<ul><li><div>Hello World</div></li><li><div>Goodbye World</div></li></ul>";
 
   assert.isTrue(actual === expected);
