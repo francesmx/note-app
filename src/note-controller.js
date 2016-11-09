@@ -8,10 +8,12 @@
   }
 
   NoteController.prototype.insertHtml = function(){
-    document.getElementById('app').innerHTML = "<ul><li><div>Hello, here I am!!!</div></li></ul>";
+    list = document.getElementById('app');
+    list.innerHTML = noteListView.returnHtml(noteController.noteList);
   }
 
-  exports.NoteController = NoteController
+  exports.NoteController = NoteController;
+  // exports.insertHtml = this.insertHtml;
 })(this);
 
 // var nc = new NoteController();
