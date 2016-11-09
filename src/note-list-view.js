@@ -8,22 +8,24 @@
     if (noteList.returnNotes().length === 0){
         return "You don't have any notes.";
     } else {
-      parsedList = this.addListDivAndJoin(noteList.returnNotes());
-      return this.addULTags(parsedList)
+      parsedList = addListDivAndJoin(noteList.returnNotes());
+      return addULTags(parsedList)
     }
   };
 
-  NoteListView.prototype.addListDivAndJoin = function (noteArray) {
+  function addListDivAndJoin(noteArray) {
     return noteArray.map(function(note) {
-      return "<li><div>" + note.returnText() + "</div></li>";
+      return "<li><div>" + truncate(note.returnText()) + "</div></li>";
     }).join("");
   };
 
-  NoteListView.prototype.addULTags = function(list) {
+  function addULTags(list) {
     return "<ul>" + list + "</ul>";
   }
 
-  exports.NoteListView = NoteListView;
-  exports.renderAll = this.renderAll;
+  function truncate(text) {
+    return (text.length > 20) ? text.substr(0,20)+'...' : text;
+  }
 
+  exports.NoteListView = NoteListView;
 })(this);

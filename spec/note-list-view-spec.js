@@ -26,8 +26,8 @@ function testNoteListViewReturnsMultiple() {
   var noteListView = new NoteListView();
   noteList.addNote("Hello World");
   noteList.addNote("Goodbye World");
+
   var actual = noteListView.renderAll(noteList);
-  console.log(actual);
   var expected = "<ul><li><div>Hello World</div></li><li><div>Goodbye World</div></li></ul>";
 
   assert.isTrue(actual === expected);
@@ -39,7 +39,7 @@ function testOnlyReturnsFirst20Chars() {
   noteList.addNote("Hello oh my I could go on for ages and ages I just keep on typing!");
 
   var actual = noteListView.renderAll(noteList);
-  var expected = "Hello oh my I could ..."
+  var expected = "<ul><li><div>Hello oh my I could ...</div></li></ul>"
 
   assert.isTrue(actual === expected);
 }
