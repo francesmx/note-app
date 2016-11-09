@@ -34,11 +34,11 @@ function testNoteControllerDisplaysSingleNote() {
   // document.getElementById = function() {
   //   return element;
   // }
+
+
+  noteController.insertHTML();
   window.location.hash = "#notes/1"
   var modifiedElement = document.getElementById("app")
-  noteController.insertHTML();
-
-
 
   var expectedHTML = '<div>Good Morning</div>';
 
