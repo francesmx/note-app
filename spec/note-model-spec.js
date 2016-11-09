@@ -9,8 +9,19 @@ function testNoteModel(){
   }
 }
 
-testNoteModel();
+function testNoteModelId(){
+  var testNote= new Note("My favourite language is JavaScript");
+  var notelist = new NoteList();
+  notelist.addNote(testNote);
+  if (testNote.id != 1) {
+    throw new Error ("ID is wrong" + testNote.id);
+  } else {
+    console.log("Success : " + testNote.id);
+  }
+}
 
+testNoteModel();
+testNoteModelId();
 
 // var assert = {
 //   isTrue: function(assertionToCheck){
