@@ -1,14 +1,3 @@
-var assert = {
-  isTrue: function(assertionToCheck) {
-    if (!assertionToCheck) {
-      throw new Error("Assertion failed: " + assertionToCheck + " is not truthy");
-    }
-    else {
-      console.log("Passed: " + assertionToCheck);
-    }
-  }
-};
-
 function testNoteListViewReturnsEmpty () {
     var noteList = new NoteList();
     var noteListView = new NoteListView();
