@@ -13,12 +13,11 @@
   };
 
   NoteList.prototype.findNoteById = function(id) {
-
-    function hasId(value) {
-      return value.id === id;
+    for (var i = 0; i < this.notes.length; i++) {
+      if (this.notes[i].id === id) {
+        return this.notes[i]
+      }
     }
-
-    return note = this.notes.find(hasId);
   }
 
   exports.NoteList = NoteList;

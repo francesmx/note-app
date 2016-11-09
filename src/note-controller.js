@@ -4,6 +4,22 @@
     this.noteListView = new NoteListView();
   }
 
+// SUBMITTING NEW FORM
+
+listenForFormSubmit();
+
+      function listenForFormSubmit() {
+        document
+          .getElementById("submit_form")
+          .addEventListener("click", function(clickEvent) {
+            clickEvent.preventDefault();
+
+            console.log(clickEvent.path[1][0].value);
+          });
+      };
+
+
+// CHANGING URLS
   makeURLChangeShowNoteForCurrentPage();
 
   function makeURLChangeShowNoteForCurrentPage() {
@@ -19,8 +35,7 @@
   }
 
   function showNote(note_id) {
-    var note = this.noteList.findNoteById(note_id);
-    console.log(note);
+    var note = this.noteList.findNoteById(parseInt(note_id));
     var singleNoteView = new SingleNoteView(note);
     document.getElementById("app").innerHTML = singleNoteView.renderNote();
   }
@@ -29,6 +44,7 @@
     var html = this.noteListView.renderAll(this.noteList)
     document.getElementById("app").innerHTML=html
   };
+
 
   exports.NoteController = NoteController;
 })(this);
