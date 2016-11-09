@@ -15,7 +15,7 @@ function testNoteListViewReturnsOne() {
   note.id = 1;
 
   var actual = noteListView.renderAll(noteList);
-  var expected = '<ul><li><a href="#notes/1"><div>Hello World</a></div></li></ul>';
+  var expected = '<ul><li><a href="#notes/1"><div>Hello World</div></a></li></ul>';
   assert.isTrue(actual === expected);
 }
 
@@ -41,9 +41,10 @@ function testOnlyReturnsFirst20Chars() {
   var noteList = new NoteList();
   var noteListView = new NoteListView();
   noteList.addNote("Hello oh my I could go on for ages and ages I just keep on typing!");
-
+  var note = noteList.returnNotes()[0];
+  note.id = 1;
   var actual = noteListView.renderAll(noteList);
-  var expected = "<ul><li><div>Hello oh my I could ...</div></li></ul>"
+  var expected = '<ul><li><a href="#notes/1"><div>Hello oh my I could ...</div></a></li></ul>'
 
   assert.isTrue(actual === expected);
 }

@@ -15,7 +15,7 @@
 
   function addListDivAndJoin(noteArray) {
     return noteArray.map(function(note) {
-      return "<li><div>" + truncate(note.returnText()) + "</div></li>";
+      return '<li><a href="#notes/' + note.id + '"><div>' + truncate(note.returnText()) + "</div></a></li>";
     }).join("");
   };
 
