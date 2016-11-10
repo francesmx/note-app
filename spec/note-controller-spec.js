@@ -29,7 +29,7 @@ function testMultipleNoteController(){
   noteController.noteList.addNote(note);
   noteListView.returnHtml(noteController.noteList);
   noteController.insertHtml();
-  var expectedValue = "<div>Favourite food: pizz...</div>";
+  var expectedValue = '<div><a href="#notes/1">Favourite food: pizz...</a></div>';
   var elementDiv = document.getElementById('app');
   var elementLi = elementDiv.getElementsByTagName('li');
   var listItem = elementLi[1].innerHTML;
