@@ -3,13 +3,14 @@
 
 
 (function (exports){
-  function NoteController(){
-    this.noteList = new NoteList();
+  function NoteController(noteList){
+    this.noteList = noteList;
+    this.noteListView = new NoteListView();
   }
 
   NoteController.prototype.insertHtml = function(){
     list = document.getElementById('app');
-    list.innerHTML = noteListView.returnHtml(noteController.noteList);
+    list.innerHTML = this.noteListView.returnHtml(this.noteList);
   }
 
   exports.NoteController = NoteController;

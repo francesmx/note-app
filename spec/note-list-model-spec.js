@@ -3,8 +3,8 @@
 
 function testNoteListModel(){
   var testNoteList = new NoteList();
-  var note = new Note("My favourite language is JavaScript");
-  testNoteList.addNote(note);
+  // var note = new Note("My favourite language is JavaScript");
+  testNoteList.addNote("My favourite language is JavaScript");
   if(((testNoteList.returnNotes())[0]).returnText() != "My favourite language is JavaScript"){
     throw new Error ("Note is not there");
   } else {

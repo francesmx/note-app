@@ -3,15 +3,13 @@
 // var NoteListView = require("./src/note-list-view.js").NoteListView
 // var NoteController = require("./src/note-controller.js").NoteController
 
-noteController = new NoteController();
-note = new Note("Favourite drink: seltzer");
-noteController.noteList.addNote(note);
-note = new Note("Favourite food: pizza");
-noteController.noteList.addNote(note);
-note = new Note("Favourite language: RUBY!!!");
-noteController.noteList.addNote(note);
-noteListView = new NoteListView();
-noteListView.returnHtml(noteController.noteList);
+var noteList = new NoteList();
+noteList.addNote("Favourite drink: seltzer");
+noteList.addNote("Favourite food: pizza");
+noteList.addNote("Favourite language: RUBY!!!");
+
+noteController = new NoteController(noteList);
+
 // console.log(noteController.noteList);
 noteController.insertHtml();
 

@@ -6,7 +6,7 @@
     if (noteList.returnNotes().length === 0) {
       return "There is nothing in the list"
     } else {
-      var liListItems = this.addListItemTags(noteList.returnNotes());
+      var liListItems = this.addListItemTags(noteList.notes);
       var ulList = this.addSurroundingListTags(liListItems);
       return ulList;
     }
@@ -18,7 +18,7 @@
         if (shortText.length > 20){
           shortText = shortText.substring(0,20) + "...";
         }
-        return ("<li><div>" + shortText + "</div></li>");
+        return ('<li><div><a href="#notes/' + eachnote.id + '">' + shortText + '</a></div></li>');
       });
     return liList.join("");
   }
@@ -28,5 +28,5 @@
   }
 
   exports.NoteListView = NoteListView;
-  exports.returnHtml = this.returnHtml;
+  // exports.returnHtml = this.returnHtml;
 })(this);

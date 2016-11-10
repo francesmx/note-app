@@ -10,13 +10,12 @@ function testNoteModel(){
 }
 
 function testNoteModelId(){
-  var testNote= new Note("My favourite language is JavaScript");
   var notelist = new NoteList();
-  notelist.addNote(testNote);
-  if (testNote.id != 1) {
-    throw new Error ("ID is wrong" + testNote.id);
+  notelist.addNote("My favourite language is JavaScript");
+  if (notelist.notes[0].id != 1) {
+    throw new Error ("ID is wrong" + notelist.notes[0].id);
   } else {
-    console.log("Success : " + testNote.id);
+    console.log("Success : " + notelist.notes[0].id);
   }
 }
 

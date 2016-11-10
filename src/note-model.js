@@ -16,5 +16,5 @@
     };
 
     exports.Note = Note;
-    exports.returnText = this.returnText;
+    // exports.returnText = this.returnText;
 })(this);
