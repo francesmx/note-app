@@ -1,7 +1,7 @@
 
 
   function makeUrlChangeShowNoteForCurrentPage() {
-    window.addEventListner("hashchange", showNoteForCurrentPage);
+    window.addEventListener("hashchange", showNoteForCurrentPage);
   };
 
   function showNoteForCurrentPage(){

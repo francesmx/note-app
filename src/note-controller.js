@@ -13,9 +13,15 @@
     list.innerHTML = this.noteListView.returnHtml(this.noteList);
   }
 
+  NoteController.prototype.insertSingleNoteHtml = function(){
+    makeUrlChangeShowNoteForCurrentPage()
+  }
+
   exports.NoteController = NoteController;
   // exports.insertHtml = this.insertHtml;
 })(this);
+
+this.insertSingleNoteHtml();
 
 // var nc = new NoteController();
 // nc.insertHtml();
