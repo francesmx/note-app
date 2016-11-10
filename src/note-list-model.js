@@ -9,6 +9,14 @@
     note.addId(this.notes.length)
   }
 
+  NoteList.prototype.findNoteById = function(id) {
+    for (var i = 0; i<this.notes.length;i++){
+      if (this.notes[i].id === id) {
+        return this.notes[i];
+      }
+    }
+  }
+
   NoteList.prototype.returnNotes = function(){
     return this.notes;
   };

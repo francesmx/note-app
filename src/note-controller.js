@@ -13,21 +13,27 @@
     list.innerHTML = this.noteListView.returnHtml(this.noteList);
   }
 
-  NoteController.prototype.insertSingleNoteHtml = function(){
-    makeUrlChangeShowNoteForCurrentPage()
+  makeUrlChangeShowNoteForCurrentPage();
+
+  function makeUrlChangeShowNoteForCurrentPage() {
+    window.addEventListener("hashchange", showNoteForCurrentPage);
+  }
+
+  function showNoteForCurrentPage(){
+    showNote(getNoteFromUrl(window.location));
+  }
+
+  function getNoteFromUrl(winLocation) {
+    return winLocation.hash.split("#notes/")[1];
+  }
+
+  function showNote(noteRef){
+    var note = this.noteList.findNoteById(parseInt(noteRef));
+    console.log(note);
+    console.log(noteRef);
+    var singleNoteView = new SingleNoteView(note);
+    document.getElementById('app').innerHTML = singleNoteView.createDiv();
   }
 
   exports.NoteController = NoteController;
-  // exports.insertHtml = this.insertHtml;
 })(this);
-
-this.insertSingleNoteHtml();
-
-// var nc = new NoteController();
-// nc.insertHtml();
-
-// var note = new Note("Favourite drink: seltzer");
-// var testNoteList = new NoteList();
-// testNoteList.addNote(note);
-// var testNoteListView = new NoteListView();
-// var actualValue = testNoteListView.returnHtml(testNoteList);
