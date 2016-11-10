@@ -16,13 +16,18 @@
     .addEventListener("click", function(clickEvent) {
       clickEvent.preventDefault();
       var text = clickEvent.path[1][0].value;
-      // submitNote(text);
+      submitNote(text);
     });
   }
 
-  // function submitNote(text){
-  //   this.noteList.addNote(text);
-  // }
+  function submitNote(text){
+    // console.log(this)
+    console.log(this.noteList)
+    this.noteList.addNote(text);
+    noteController.insertHtml();    //Baaaaaaad code!!! Change!!!!
+    // console.log(this)
+    // this.insertHtml();
+  }
 
   makeUrlChangeShowNoteForCurrentPage();
 
