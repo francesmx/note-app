@@ -4,7 +4,7 @@
   }
 
   SingleNoteView.prototype.viewSingleNote = function(){
-    singleNote = document.getElementById('singleNote');
+    singleNote = document.getElementById('app');
     note = this.createDiv();
     singleNote.innerHTML = note;
   }

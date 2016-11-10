@@ -8,7 +8,7 @@ function testNoteSingleView(){
   var singleNote = new SingleNoteView(note);
   singleNote.viewSingleNote();
   var expectedValue = "<div>Favourite drink: seltzer</div>";
-  var singleNoteDiv = document.getElementById('singleNote').innerHTML;
+  var singleNoteDiv = document.getElementById('app').innerHTML;
   if(singleNoteDiv != expectedValue){
     throw new Error ("Single note is not there " + singleNoteDiv);
   } else {

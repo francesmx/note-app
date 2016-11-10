@@ -1,7 +1,3 @@
-// document.getElementById('app').innerHTML = "Howdy";
-// console.log(document.getElementById('app').innerHTML);
-
-
 (function (exports){
   function NoteController(noteList){
     this.noteList = noteList;
@@ -12,6 +8,21 @@
     list = document.getElementById('app');
     list.innerHTML = this.noteListView.returnHtml(this.noteList);
   }
+
+  submitNewNoteWhenButtonClicked();
+
+  function submitNewNoteWhenButtonClicked(){
+    document.getElementById("submit")
+    .addEventListener("click", function(clickEvent) {
+      clickEvent.preventDefault();
+      var text = clickEvent.path[1][0].value;
+      // submitNote(text);
+    });
+  }
+
+  // function submitNote(text){
+  //   this.noteList.addNote(text);
+  // }
 
   makeUrlChangeShowNoteForCurrentPage();
 
@@ -29,10 +40,8 @@
 
   function showNote(noteRef){
     var note = this.noteList.findNoteById(parseInt(noteRef));
-    console.log(note);
-    console.log(noteRef);
     var singleNoteView = new SingleNoteView(note);
-    document.getElementById('app').innerHTML = singleNoteView.createDiv();
+    document.getElementById("app").innerHTML = singleNoteView.createDiv();
   }
 
   exports.NoteController = NoteController;
