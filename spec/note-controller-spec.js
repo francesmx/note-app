@@ -44,40 +44,27 @@ function testShowsFullNoteText(){
   var elementDiv = document.getElementById("app");
   var expectedValue = '<div>I wonder if this will work</div>';
 
-  // This test isn't working. It does detect the hash change.
-  // But it can't find the notelist when the method is called. Weirdly!
-
-  // if(elementDiv.innerHTML === expectedValue){
-  //   console.log("Woohoo shows full note text" + elementDiv.innerHTML);
-  // } else {
-  //   throw new Error ("Poo. Doesn't show full note text" + elementDiv.innerHTML);
-  // }
+  if(elementDiv.innerHTML === expectedValue){
+    console.log("Woohoo shows full note text" + elementDiv.innerHTML);
+  } else {
+    throw new Error ("Poo. Doesn't show full note text" + elementDiv.innerHTML);
+  }
 }
 
 testShowsFullNoteText();
-//
-// function testSubmitsNote() {
-//
-//   var testDiv = document.createelement('div');
-//   testDiv.id = "app2";
-//   testDiv.value = "hello";
-//
-//   var textArea = document.createElement('textarea');
-//   textArea.id = "text";
-//   textArea.value = "This is my shiny new note.";
-//
-//   var submitBtn = document.createElement('button');
-//   submitBtn.id = "submit";
-//   submitBtn.type = "submit";
-//
-//   submitBtn.click();
-//
-//   var elementDiv = document.getElementById('app2');
-//   if(elementDiv.innerHTML === textArea.value){
-//     console.log("It submits a new note." + elementDiv.innerHTML);
-//   } else {
-//     throw new Error ("Poo. It does not submit a new note." + elementDiv.innerHTML);
-//   }
-// }
-//
-// testSubmitsNote();
+
+function testSubmitsNote() {
+
+  // btn = document.getElementById("submit");
+  // // I need to put something in the text area
+  // submitBtn.click();
+  //
+  // var elementDiv = document.getElementById('app');
+  // if(elementDiv.innerHTML === textArea.value){
+  //   console.log("It submits a new note." + elementDiv.innerHTML);
+  // } else {
+  //   throw new Error ("Poo. It does not submit a new note." + elementDiv.innerHTML);
+  // }
+}
+
+testSubmitsNote();

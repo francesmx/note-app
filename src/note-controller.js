@@ -1,12 +1,16 @@
 (function (exports){
+
+var self;
+
   function NoteController(noteList){
-    this.noteList = noteList;
-    this.noteListView = new NoteListView();
+    self = this;
+    self.noteList = noteList;
+    self.noteListView = new NoteListView();
   }
 
   NoteController.prototype.insertHtml = function(){
     list = document.getElementById('app');
-    list.innerHTML = this.noteListView.returnHtml(this.noteList);
+    list.innerHTML = this.noteListView.returnHtml(self.noteList);
   }
 
   submitNewNoteWhenButtonClicked();
@@ -21,12 +25,8 @@
   }
 
   function submitNote(text){
-    // console.log(this)
-    console.log(this.noteList)
-    this.noteList.addNote(text);
-    noteController.insertHtml();    //Baaaaaaad code!!! Change!!!!
-    // console.log(this)
-    // this.insertHtml();
+    self.noteList.addNote(text);
+    self.insertHtml();
   }
 
   makeUrlChangeShowNoteForCurrentPage();
@@ -44,7 +44,7 @@
   }
 
   function showNote(noteRef){
-    var note = this.noteList.findNoteById(parseInt(noteRef));
+    var note = self.noteList.findNoteById(parseInt(noteRef));
     var singleNoteView = new SingleNoteView(note);
     document.getElementById("app").innerHTML = singleNoteView.createDiv();
   }
